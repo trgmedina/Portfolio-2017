@@ -1,6 +1,7 @@
 // Include React as a dependency
 import React from 'react';
 import {Navbar, NavItem, Icon, Button, Carousel } from 'react-materialize';
+var mailtoLink = require('mailto-link');
 
 // Including the Link component from React Router to navigate within our application without full page reloads
 const Link = require("react-router").Link;
@@ -8,12 +9,21 @@ const Link = require("react-router").Link;
 // Create the Main component
 class Main extends React.Component {
 
+  sendEmail() {
+    mailtoLink({to: "trgmedina@gmail.com", subject: 'Hello!'});
+    console.log("click");
+  }
+
+  linkedin() {
+    browserHistory
+  }
+
   render() {
 
     return (
       <div className="container-fluid">
          
-        <Navbar id= "nav" brand="Theresa R. Medina" href="#welcome" right>
+        <Navbar id= "nav" brand="Theresa R. Medina" href="#welcome" fixed right>
           <i className="symbol material-icons">spa</i>
           <NavItem className="options" href="#about">About</NavItem>
           <i className="symbol material-icons">assignment</i>
@@ -38,29 +48,29 @@ class Main extends React.Component {
           <h2 className="titles">Experience</h2>
 
           <div className="icons">
-            <i className="devi devicon-html5-plain-wordmark"></i>
-            <i className="devi devicon-css3-plain-wordmark"></i>
-            <i className="devi devicon-javascript-plain"></i>
-            <i className="devi devicon-jquery-plain-wordmark"></i>
+            <i className="glyphicons devicon-html5-plain-wordmark"></i>
+            <i className="glyphicons devicon-css3-plain-wordmark"></i>
+            <i className="glyphicons devicon-javascript-plain"></i>
+            <i className="glyphicons devicon-jquery-plain-wordmark"></i>
             <br></br><br></br><br></br>
-            <i className="devi devicon-git-plain"></i>
-            <i className="devi devicon-nodejs-plain"></i>
-            <i className="devi devicon-express-original"></i>
-            <i className="devi devicon-react-original-wordmark"></i>
+            <i className="glyphicons devicon-git-plain"></i>
+            <i className="glyphicons devicon-nodejs-plain"></i>
+            <i className="glyphicons devicon-express-original"></i>
+            <i className="glyphicons devicon-react-original-wordmark"></i>
             <br></br><br></br><br></br>
-            <i className="devi devicon-mongodb-plain-wordmark"></i>
-            <i className="devi devicon-python-plain-wordmark"></i>
-            <i className="devi devicon-mysql-plain-wordmark"></i>
-            <i className="devi devicon-sequelize-plain-wordmark"></i>
+            <i className="glyphicons devicon-mongodb-plain-wordmark"></i>
+            <i className="glyphicons devicon-python-plain-wordmark"></i>
+            <i className="glyphicons devicon-mysql-plain-wordmark"></i>
+            <i className="glyphicons devicon-sequelize-plain-wordmark"></i>
             <br></br><br></br><br></br>
-            <i className="devi devicon-django-plain"></i>
-            <i className="devi devicon-heroku-original-wordmark"></i>
-            <i className="devi devicon-java-plain-wordmark"></i>
-            <i className="devi devicon-cplusplus-plain"></i>
+            <i className="glyphicons devicon-django-plain"></i>
+            <i className="glyphicons devicon-heroku-original-wordmark"></i>
+            <i className="glyphicons devicon-java-plain-wordmark"></i>
+            <i className="glyphicons devicon-cplusplus-plain"></i>
           </div>
         </div>
 
-        <div id="#projects">
+        <div id="projects">
           <h2 className="titles">Projects</h2>
           <Carousel fixedItem={<Button className="red" waves="light" node='a' href="https://github.com/trgmedina/plantapp" target="_blank">Plantr</Button>}
           options= {{ fullWidth: true }} images={[
@@ -86,6 +96,19 @@ class Main extends React.Component {
         </div>
 
         <div id="contact">
+          <h2 className="titles">Contact Me!</h2>
+
+          <div className="icons">
+            <a href="mailto:trgmedina@gmail.com">
+              <i className="glyphicons fa fa-envelope"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/theresamedina/" target="_blank">
+              <i className="glyphicons fa fa-linkedin-square" aria-hidden="true"></i>
+            </a>
+            <a href="https://github.com/trgmedina" target="_blank">
+              <i className="glyphicons fa fa-github-square" aria-hidden="true"></i>
+            </a>
+          </div>
         </div>
 
       </div>

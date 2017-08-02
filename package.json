@@ -29,8 +29,9 @@
   },
   "dependencies": {
     "body-parser": "^1.17.2",
-    "devicon": "^2.0.0",
     "express": "^4.15.3",
+    "hover.css": "^2.2.0",
+    "mailto-link": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-materialize": "^1.0.6",
